@@ -5,6 +5,7 @@
 #
 # Have fun.
 echo "Starting to Create Files. This WILL TAKE A WHILE!"
+mkdir -p objects
 dd if=/dev/urandom of=objects/1.jpg bs=1 count=11483
 dd if=/dev/urandom of=objects/2.jpg bs=1 count=40658
 dd if=/dev/urandom of=objects/3.jpg bs=1 count=164897

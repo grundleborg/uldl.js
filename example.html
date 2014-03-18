@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>uldl.js Test</title>
+  </head>
+  <body>
+    <p style="font-size: 20pt; text-align: center"><a href="#" id="dl-start">Test Download Speed</a></p>
+    <p style="font-size: 16pt; text-align: center" id="dl-result"></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="uldl.js"></script>
+    <script>
+      $("#dl-start").click(function() {
+          var objects = [
+              { url: "/objects/1.jpg", size: 11483, timeout: 7000 },
+              { url: "/objects/2.jpg", size: 40658, timeout: 2500 },
+              { url: "/objects/3.jpg", size: 164897, timeout: 2500 },
+              { url: "/objects/4.jpg", size: 381756, timeout: 1500 },
+              { url: "/objects/5.jpg", size: 1234664, timeout: 1200 },
+              { url: "/objects/6.jpg", size: 4509613, timeout: 1200 },
+              { url: "/objects/7.jpg", size: 9084559, timeout: 1200 },
+              { url: "/objects/8.jpg", size: 19200000, timeout: 1500 },
+              { url: "/objects/9.jpg", size: 153600000, timeout: 1200 }
+          ];
+          measureDownloadSpeed(objects, function(speed) {
+              $("#dl-result").html("Download Speed:"+speed+".");
+              $("#dl-start").html("Test Again");
+          });
+          $("#dl-start").html("Testing In Progres...");
+      });
+      </script>
+  
+  </body>
+</html>
