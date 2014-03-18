@@ -11,15 +11,15 @@ Trying it Out
 
 First, create the object files, all ~200mb of them.
 
-  ./create-download-objects.sh
+    ./create-download-objects.sh
 
 This will take a while. Once it's done, run a web server, e.g:
 
-  php -S localhost:8001
+    php -S localhost:8001
 
 Then, in your browser of choice, go to:
 
-  http://localhost:8001/example.html
+    http://localhost:8001/example.html
 
 And click "Test Download Speed".  It'll print the result when it's done. Note that because you are
 running it on your local computer, it'll be pretty damn fast! Try it on a remote web server if you
