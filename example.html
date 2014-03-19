@@ -6,7 +6,8 @@
   </head>
   <body>
     <p style="font-size: 20pt; text-align: center"><a href="#" id="dl-start">Test Download Speed</a></p>
-    <p style="font-size: 16pt; text-align: center" id="dl-result"></p>
+    <p style="font-size: 16pt; text-align: center" id="dl-result-formatted"></p>
+    <p style="font-size: 12pt; text-align: center" id="dl-result"></p>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="uldl.js"></script>
@@ -24,7 +25,8 @@
               { url: "/objects/9.jpg", size: 153600000, timeout: 1200 }
           ];
           measureDownloadSpeed(objects, function(speed) {
-              $("#dl-result").html("Download Speed:"+speed+".");
+              $("#dl-result").html("Raw Download Speed: "+speed+".");
+              $("#dl-result-formatted").html("Download Speed: "+formatSpeedNicely(speed)+".");
               $("#dl-start").html("Test Again");
           });
           $("#dl-start").html("Testing In Progres...");

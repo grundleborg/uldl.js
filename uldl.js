@@ -93,4 +93,23 @@ var measureDownloadSpeed = function(objects, callback)
     loadObjects();
 };
 
+function formatSpeedNicely(speed)
+{
+    if (speed < 100) {
+        return ""+speed.toFixed(1)+" Bytes/s";
+    } else if (speed < 1024) {
+        return ""+speed.toFixed(0)+" Bytes/s";
+    } else if (speed < 102400) {
+        return ""+(speed / 1024).toFixed(1)+" KB/s";
+    } else if (speed < 1048576) {
+        return ""+(speed / 1024).toFixed(0)+" KB/s";
+    } else if (speed < 104857600) {
+        return ""+(speed / 1048576).toFixed(1)+" MB/s";
+    } else if (speed < (1024*1024*1024)) {
+        return ""+(speed / 1048576).toFixed(0)+" MB/s";
+    } else {
+        return ""+(speed / (1024*1024*1024)).toFixed(1)+" GB/s";
+    }
+}
+
 
